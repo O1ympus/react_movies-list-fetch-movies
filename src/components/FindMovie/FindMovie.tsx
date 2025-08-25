@@ -3,7 +3,7 @@ import './FindMovie.scss';
 import { Movie } from '../../types/Movie';
 import { getMovie } from '../../api';
 import { MovieCard } from '../MovieCard';
-import { ResponseError } from '../../types/ReponseError';
+import { ResponseError } from '../../types/ResponseError';
 import { MovieData } from '../../types/MovieData';
 import cn from 'classnames';
 
@@ -123,7 +123,7 @@ export const FindMovie: React.FC<Props> = ({
                   if (
                     !movie ||
                     movieList.some(
-                      existingMovie => existingMovie.imdbUrl === movie.imdbUrl,
+                      existingMovie => existingMovie.imdbId === movie.imdbId,
                     )
                   ) {
                     movieHandler(null);
